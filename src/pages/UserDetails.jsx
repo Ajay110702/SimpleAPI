@@ -18,10 +18,11 @@ export default function UserDetails(){
 
 const updateHandler = async (updatedUser) => {
  console.log("Updating user: ",updatedUser)
-    setUser(updatedUser);
+    
 
     try {
       await updateUser(id, updatedUser);
+      setUser(updatedUser);
       navigate('/users');
     } catch {
       alert("Update failed");
@@ -29,10 +30,10 @@ const updateHandler = async (updatedUser) => {
   };
 
 const deleteHandler = async () => {
- navigate("/users");
 
     try {
       await deleteUser(id);
+      navigate("/users");
     } catch {
       alert("Delete failed");
     }

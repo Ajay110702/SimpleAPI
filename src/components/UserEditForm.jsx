@@ -1,8 +1,8 @@
 import { useState,useEffect } from "react";
 
 export default function UserEditForm({ user, onUpdate }) {
-  const [name, setName] = useState(" ");
-  const [email, setEmail] = useState(" ");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     if (user) {
@@ -24,12 +24,12 @@ export default function UserEditForm({ user, onUpdate }) {
 
   return (
     <form onSubmit={submitHandler} className="space-y-3">
-      <input
+      <input type="text"
         className="border p-2 w-full rounded"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <input
+      <input type="email"
         className="border p-2 w-full rounded"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
